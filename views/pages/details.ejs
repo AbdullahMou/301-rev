@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+
+<body>
+    <%result.forEach(val=>{%>
+        <div>
+            <h1>
+                <%=val.type%>
+            </h1>
+            <h2>
+                <%=val.setup%>
+            </h2>
+            <h3>
+                <%=val.punchline%>
+            </h3>
+        </div>
+
+        <form action="/details/<%=val.id%>?_method=put" method="POST">
+            <input type="text" name='type' value='<%=val.type%>'>
+            <input type="text" name='setup' value='<%=val.setup%>'>
+            <input type="text" name='punchline' value='<%=val.punchline%>'>
+            <input type="submit" value="update details">
+        </form>
+
+
+        <%})%>
+</body>
+
+</html>

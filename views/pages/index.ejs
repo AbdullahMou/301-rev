@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <%result.forEach(val=>{%>
+        <div>
+            <h1>
+                <%=val.type%>
+            </h1>
+            <h2>
+                <%=val.setup%>
+            </h2>
+            <h3>
+                <%=val.punchline%>
+            </h3>
+        </div>
+        <form action="/fav" method="POST">
+            <input type="text" name='type' value='<%=val.type%>' style='display:none'>
+            <input type="text" name='setup' value='<%=val.setup%>' style='display:none'>
+            <input type="text" name='punchline' value='<%=val.punchline%>' style='display:none'>
+            <input type="submit" value="Add To Fav">
+        </form>
+
+        <%})%>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fav</title>
+</head>
+
+<body>
+    <%result.forEach(val=>{%>
+        <div>
+            <h1>
+                <%=val.type%>
+            </h1>
+            <h2>
+                <%=val.setup%>
+            </h2>
+            <h3>
+                <%=val.punchline%>
+            </h3>
+        </div>
+        <form action="/details/<%=val.id%>" method="get">
+            <input type="submit" value="show details">
+        </form>
+        <form action="/details/<%=val.id%>?_method=delete" method="post">
+            <input type="submit" value="delete ">
+        </form>
+        <%})%>
+</body>
+
+</html>
